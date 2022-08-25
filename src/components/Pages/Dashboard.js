@@ -8,7 +8,7 @@ const Dashboard = () => {
     return (
         <div>
             <Banner></Banner>
-            {/* <ProductGraph></ProductGraph> */}
+            <ProductGraph></ProductGraph>
             <TopProduct></TopProduct>
             <Summary></Summary>
         </div>

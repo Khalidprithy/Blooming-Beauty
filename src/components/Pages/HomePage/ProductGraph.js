@@ -3,7 +3,7 @@ import React from 'react';
 const ProductGraph = () => {
     return (
         <div>
-            <h1>Product Graph</h1>
+            <h1 className='text-xl font-bold text-center'>Product Graph</h1>
         </div>
     );
 };

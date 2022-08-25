@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FcGoogle } from 'react-icons/fc';
+import { GrFacebook } from 'react-icons/gr';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
 
@@ -44,15 +45,22 @@ const SignUp = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-white">
+        <div className="hero min-h-screen bg-base-100">
             <div className="hero-content flex-col lg:flex-row">
+                <img src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2745.jpg?w=2000" class="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
-                    <div className="card w-80 bg-primary border rounded-md">
+                    <div className="card w-80 bg-secondary border rounded-md">
                         <div className="card-body">
                             <h2 className="text-2xl m-2 font-bold text-center text-white">Sign Up</h2>
-                            <button
-                                onClick={() => signInWithGoogle()}
-                                className="btn border-white hover:border-white text-black hover:text-white bg-white"><FcGoogle className='mr-2'></FcGoogle>Sign Up with Google</button>
+                            <div className="flex items-center justify-between">
+                                <button
+                                    onClick={() => signInWithGoogle()}
+                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><FcGoogle className='mr-2'></FcGoogle>Google</button>
+                                <button
+                                    onClick={() => signInWithGoogle()}
+                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button>
+                            </div>
+
                             <div className="divider text-white">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control w-full max-w-xs">
@@ -115,10 +123,10 @@ const SignUp = () => {
                                     </label>
                                 </div>
                                 {errorMessage}
-                                <input className='btn w-full text-white' type="submit" value='Sign Up' />
+                                <input className='btn btn-accent w-full text-white' type="submit" value='Sign Up' />
                             </form>
                             <div className='flex items-center'>
-                                <p className='text-white'>Already have an account?<Link className='btn btn-link text-xs text-success' to='/login'>Login</Link> </p>
+                                <p className='text-white'>Already have an account?<Link className='btn btn-link text-xs text-accent' to='/login'>Login</Link> </p>
                             </div>
                         </div>
                     </div>

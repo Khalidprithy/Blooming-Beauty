@@ -1,10 +1,25 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 import Logo1 from '../../images/Logo1.png'
 import Logo2 from '../../images/Logo2.png'
 import Logo3 from '../../images/Logo3.png'
 
 const Navbar = () => {
+
+    const [user, setUser] = useAuthState(auth);
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                setUser({})
+            })
+            .catch(error => {
+                setUser({});
+            })
+    }
 
     const menuItems = <>
         <li className='font-semibold text-white'><Link to='/'>Dashboard</Link></li>
@@ -33,24 +48,28 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex-none">
-
-                    <div className="dropdown dropdown-end">
-                        <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="https://placeimg.com/80/80/people" alt='' />
+                    {
+                        user ?
+                            <div className="dropdown dropdown-end">
+                                <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src="https://placeimg.com/80/80/people" alt='' />
+                                    </div>
+                                </label>
+                                <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
+                                    <li>
+                                        <p className="justify-between text-white">Profile</p>
+                                    </li>
+                                    <li>
+                                        <button
+                                            onClick={handleSignOut}
+                                            className='sign-out text-white'>Sign out </button>
+                                    </li>
+                                </ul>
                             </div>
-                        </label>
-                        <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <p className="justify-between">Profile</p>
-                            </li>
-                            <li>
-                                <button
-                                    className='sign-out'>Sign out </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <NavLink className='btn btn-primary btn-sm' to="/login">Login</NavLink>
+                            :
+                            <NavLink className='btn btn-accent btn-sm' to="/login">Login</NavLink>
+                    }
                 </div>
             </div>
         </div>

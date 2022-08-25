@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import { GrFacebook } from 'react-icons/gr';
 
 
 const Login = () => {
@@ -44,14 +45,20 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-white">
-            <div className="hero-content flex-col lg:flex-row">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=2000" class="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
-                    <div className="card w-80 bg-primary border rounded-md">
+                    <div className="card w-80 bg-secondary border rounded-md">
                         <div className="card-body">
                             <h2 className="text-2xl m-2 font-bold text-center text-white">Login</h2>
-                            <button
-                                onClick={() => signInWithGoogle()}
-                                className="btn border-white hover:border-white text-black hover:text-white bg-white"><FcGoogle className='mr-2'></FcGoogle>Sign in with Google</button>
+                            <div className="flex items-center justify-between">
+                                <button
+                                    onClick={() => signInWithGoogle()}
+                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><FcGoogle className='mr-2'></FcGoogle>Google</button>
+                                <button
+                                    onClick={() => signInWithGoogle()}
+                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button>
+                            </div>
                             <div className="divider text-white">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control w-full max-w-xs">
@@ -100,10 +107,10 @@ const Login = () => {
                                 </div>
 
                                 {errorMessage}
-                                <input className='btn w-full text-white' type="submit" value='Login' />
+                                <input className='btn btn-accent w-full text-white' type="submit" value='Login' />
                             </form>
                             <div className='flex justify-center items-center'>
-                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-green-500' to='/signup'>Sign Up</Link> </p>
+                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-primary' to='/signup'>Sign Up</Link> </p>
                             </div>
                         </div>
                     </div>
