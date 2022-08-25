@@ -7,12 +7,13 @@ import Blog from './components/Pages/Blog';
 import Dashboard from './components/Pages/Dashboard';
 import Inventory from './components/Pages/Inventory';
 import Purchase from './components/Pages/Purchase';
+import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
 import NotFound from './components/Shared/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Dashboard></Dashboard>}></Route>
@@ -27,6 +28,7 @@ function App() {
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
       <Toaster />
     </div>
   );
