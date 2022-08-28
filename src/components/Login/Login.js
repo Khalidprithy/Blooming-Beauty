@@ -46,7 +46,7 @@ const Login = () => {
     return (
         <div className="hero min-h-screen bg-white">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=2000" class="max-w-sm rounded-lg hidden md:block" alt="" />
+                <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
                     <div className="card w-80 bg-secondary border rounded-md">
                         <div className="card-body">

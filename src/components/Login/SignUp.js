@@ -47,7 +47,7 @@ const SignUp = () => {
     return (
         <div className="hero min-h-screen bg-base-100">
             <div className="hero-content flex-col lg:flex-row">
-                <img src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2745.jpg?w=2000" class="max-w-sm rounded-lg hidden md:block" alt="" />
+                <img src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2745.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
                     <div className="card w-80 bg-secondary border rounded-md">
                         <div className="card-body">
