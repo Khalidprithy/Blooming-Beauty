@@ -58,12 +58,18 @@ const Navbar = () => {
                                 </label>
                                 <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
                                     <li>
-                                        <p className="justify-between text-white">Profile</p>
+                                        <Link to='/profile' className="justify-between text-white">Profile</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='/myItems' className="justify-between text-white">My Items</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='/addItems' className="justify-between text-white">Add Items</Link>
                                     </li>
                                     <li>
                                         <button
                                             onClick={handleSignOut}
-                                            className='sign-out text-white'>Sign out </button>
+                                            className='sign-out btn-accent text-black w-1/2 mt-2'>Sign out </button>
                                     </li>
                                 </ul>
                             </div>

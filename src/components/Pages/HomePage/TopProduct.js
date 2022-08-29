@@ -1,8 +1,13 @@
 import React from 'react';
-import { BsCashCoin, BsCartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import useProducts from '../../../hooks/useProducts';
+import ShowTopItems from './ShowTopItems';
+import TopSold from './TopSold';
 
 const TopProduct = () => {
+
+    const [products] = useProducts();
+
     return (
         <div className='flex flex-col md:flex-row m-2 gap-3 py-14'>
             <div className='w-full md:w-3/5 border-2 rounded-xl'>
@@ -16,36 +21,12 @@ const TopProduct = () => {
                 </div>
                 <div className='m-2'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-2'>
-                        <div className="card card-compact bg-base-100 hover:shadow-xl shadow-none">
-                            <figure><img src="https://images-na.ssl-images-amazon.com/images/I/61YO%2BXsyqAS._SL1500_.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="text-xl">Pore Filler</h2>
-                                <p className='text-xs'>NYX professional makeup, Blurring Primer</p>
-                                <div className="card-actions justify-center">
-                                    <button className="btn btn-sm btn-accent w-full">Manage</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card card-compact bg-base-100 hover:shadow-xl shadow-none">
-                            <figure><img src="https://imagiccosmetics.com/wp-content/uploads/2019/06/A3.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="text-xl">Foundation</h2>
-                                <p className='text-xs'>Magic professional cosmetics, Blurring Primer</p>
-                                <div className="card-actions justify-center">
-                                    <button className="btn btn-sm btn-accent w-full">Manage</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card card-compact bg-base-100 hover:shadow-xl shadow-none">
-                            <figure><img src="https://shop.shajgoj.com/wp-content/uploads/2018/12/wet-n-wild-photo-focus-matte-setting-spray1-800.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="text-xl">Setting Spray</h2>
-                                <p className='text-xs'>Wet and Wild, Matte finish.</p>
-                                <div className="card-actions justify-center">
-                                    <button className="btn btn-sm btn-accent w-full">Manage</button>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            products.slice(0, 3).map(product => <ShowTopItems
+                                key={product?._id}
+                                product={product}
+                            ></ShowTopItems>)
+                        }
 
                     </div>
                 </div>
@@ -57,30 +38,12 @@ const TopProduct = () => {
                     <Link to='/inventory' className='btn btn-sm btn-accent'>View All</Link>
                 </div>
                 <div className='grid grid-cols-1 gap-2 border-2 rounded-2xl p-2'>
-                    <div className="card h-48 card-side bg-base-100 border hover:shadow-2xl">
-                        <figure><img className='w-32 rounded-xl m-1 md:m-2' src="https://shop.shajgoj.com/wp-content/uploads/2018/12/wet-n-wild-photo-focus-matte-setting-spray1-800.jpg" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="text-base font-semibold text-left">Setting Spray</h2>
-                            <div>
-                                <p className='text-sm'>Price: $120</p>
-                                <p className='text-sm'>Brand: Wet & Wild</p>
-                                <p className='text-sm'>Total sold: 1200</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card h-48 card-side bg-base-100 border hover:shadow-2xl">
-                        <figure><img className='w-32 rounded-xl m-1 md:m-2' src="https://cdn-sv2.stylevana.com/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/d/-/d-alba-white-truffle-first-spray-serum-50ml-686.jpg" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="text-base font-semibold text-left">Serum Spray</h2>
-                            <div>
-                                <p className='text-sm'>Price: $20</p>
-                                <p className='text-sm'>Brand: Livon</p>
-                                <p className='text-sm'>Total sold: 900</p>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    {
+                        products.slice(3, 5).map(product => <TopSold
+                            key={product?._id}
+                            product={product}
+                        ></TopSold>)
+                    }
                 </div>
             </div>
         </div>

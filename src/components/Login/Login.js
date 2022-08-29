@@ -54,10 +54,10 @@ const Login = () => {
                             <div className="flex items-center justify-between">
                                 <button
                                     onClick={() => signInWithGoogle()}
-                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><FcGoogle className='mr-2'></FcGoogle>Google</button>
+                                    className="btn border-white hover:border-white text-black hover:text-red-400 bg-white hover:bg-accent"><FcGoogle className='mr-2'></FcGoogle>Google</button>
                                 <button
                                     onClick={() => signInWithGoogle()}
-                                    className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button>
+                                    className="btn border-white hover:border-white text-black hover:text-blue-600 bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button>
                             </div>
                             <div className="divider text-white">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -110,7 +110,7 @@ const Login = () => {
                                 <input className='btn btn-accent w-full text-white' type="submit" value='Login' />
                             </form>
                             <div className='flex justify-center items-center'>
-                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-primary' to='/signup'>Sign Up</Link> </p>
+                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-accent' to='/signup'>Sign Up</Link> </p>
                             </div>
                         </div>
                     </div>
