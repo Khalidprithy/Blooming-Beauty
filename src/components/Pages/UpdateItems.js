@@ -124,12 +124,12 @@ const UpdateItems = () => {
     return (
         <div>
             <h1 className='text-center text-2xl text-gray-500 mt-6 font-bold'>Update this item</h1>
-            <div class="hero min-h-screen">
-                <div class="hero-content flex-col md:flex-row">
-                    <img src={product?.picture} class="max-w-sm w-72  rounded-lg border hover:scale-105 duration-75 delay-75 ease-in translate-y-1" alt='' />
+            <div className="hero min-h-screen">
+                <div className="hero-content flex-col md:flex-row">
+                    <img src={product?.picture} className="max-w-sm w-72  rounded-lg border hover:scale-105 duration-75 delay-75 ease-in translate-y-1" alt='' />
                     <div>
-                        <h1 class="text-5xl font-bold">{product?.itemName}</h1>
-                        <p class="py-6">{product?.description}</p>
+                        <h1 className="text-5xl font-bold">{product?.itemName}</h1>
+                        <p className="py-6">{product?.description}</p>
                         <div>
                             <p>Brand: {product?.brand}</p>
                             <p>Category: {product?.category}</p>
@@ -156,7 +156,7 @@ const UpdateItems = () => {
                             <button
                                 onClick={handleDelivered}
                                 className='btn btn-xs btn-primary'>Delivered</button>
-                            <button class="btn btn-xs btn-success">Update</button>
+                            <button className="btn btn-xs btn-success">Update</button>
                         </div>
                     </div>
                 </div>

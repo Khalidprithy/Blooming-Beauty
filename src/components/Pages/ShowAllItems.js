@@ -49,17 +49,17 @@ const ShowAllItems = ({ product, handleDeleteBtn }) => {
                 </td>
                 <th>
                     <div className='flex'>
-                        <div class="tooltip tooltip-info p-0.5" data-tip="View">
+                        <div className="tooltip tooltip-info p-0.5" data-tip="View">
                             <p
                                 onClick={() => handleEditBtn(_id)}
                                 className='btn btn-xs'><AiOutlineEye className='my-1 text-white'></AiOutlineEye></p>
                         </div>
-                        <div class="tooltip tooltip-primary p-0.5" data-tip="Edit">
+                        <div className="tooltip tooltip-primary p-0.5" data-tip="Edit">
                             <p
                                 onClick={() => handleEditBtn(_id)}
                                 className='btn btn-xs'><FiEdit className='my-1 text-white'></FiEdit></p>
                         </div>
-                        <div class="tooltip tooltip-error p-0.5" data-tip="Delete">
+                        <div className="tooltip tooltip-error p-0.5" data-tip="Delete">
                             <p
                                 onClick={() => handleDeleteBtn(_id)}
                                 className='btn btn-xs'><MdDelete className='my-1 text-white'></MdDelete></p>
