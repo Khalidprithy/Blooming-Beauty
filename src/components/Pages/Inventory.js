@@ -37,7 +37,7 @@ const Inventory = () => {
                 <p className='text-xl font-semibold'>All Product List</p>
                 <button
                     onClick={handleAddProduct}
-                    className='btn btn-sm btn-accent'>Add Product</button>
+                    className='btn btn-sm btn-accent'>Add New Item</button>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
