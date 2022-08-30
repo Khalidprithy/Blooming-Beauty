@@ -5,29 +5,26 @@ const ShowMyItems = ({ product, handleDeleteBtn }) => {
     const { _id } = product;
 
     return (
-        <tbody>
-            <tr>
-                <td><img className='row-img' src={product?.picture} alt="" /></td>
-                <td className='d-none d-md-block'>
-                    <div className='container'>
-                        <p className='m-0'>{product?.name}</p>
-                        <p className='description'>{product?.description}</p>
-                    </div>
-                </td>
-                <td>${product?.price}</td>
-                <td>
-                    <div className='d-flex align-items-center'>
-                        <p>{product?.quantity}</p>
-                    </div>
-                </td>
-                <td className='d-none d-md-block border-bottom-0'>{product?.supplierName}</td>
-                <td>
+        <div class="card md:card-side bg-base-100 border-2 hover:shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-pink-100 duration-300">
+            <figure><img className='row-img w-40 mask mask-squircle m-4' src={product?.picture} alt="" /></figure>
+            <div class="flex items-center justify-between gap-2 p-2">
+                <h2 class="card-title">{product?.itemName}</h2>
+                <div className='text-left'>
+                    <p>Category: {product?.category}</p>
+                    <p>Brand: {product?.brand}</p>
+                </div>
+                <div className='text-left'>
+                    <p>Price: {product?.price}</p>
+                    <p>Quantity: {product?.quantity}</p>
+                </div>
+                <div class="card-actions justify-end items-center">
                     <button
                         onClick={() => handleDeleteBtn(_id)}
-                        className='btn btn-link'><AiFillDelete className='text-danger'></AiFillDelete></button>
-                </td>
-            </tr>
-        </tbody>
+                        className='btn btn-link'><AiFillDelete className='text-error text-4xl'></AiFillDelete>
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 };
 

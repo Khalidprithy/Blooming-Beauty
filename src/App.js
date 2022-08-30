@@ -4,11 +4,11 @@ import './App.css';
 import Login from './components/Login/Login';
 import SignUp from './components/Login/SignUp';
 import AddItems from './components/Pages/AddItems';
-import Blog from './components/Pages/Blog';
 import Dashboard from './components/Pages/Dashboard';
 import Inventory from './components/Pages/Inventory';
 import MyItems from './components/Pages/MyItems';
 import Purchase from './components/Pages/Purchase';
+import Purchases from './components/Pages/Purchases';
 import UpdateItems from './components/Pages/UpdateItems';
 import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
@@ -31,8 +31,8 @@ function App() {
           </RequireAuth>
 
         } ></Route>
-        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/purchase' element={<Purchase></Purchase>}></Route>
+        <Route path='/purchases' element={<Purchases></Purchases>}></Route>
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />
         <Route path='/addItems' element={<AddItems></AddItems>} />

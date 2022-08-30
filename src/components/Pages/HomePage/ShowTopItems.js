@@ -16,6 +16,10 @@ const ShowTopItems = ({ product }) => {
             <div className="card-body">
                 <h2 className="text-xl">{product?.itemName}</h2>
                 <p className='text-xs'>{product?.description}</p>
+                <div className='flex flex-row text-xs'>
+                    <p>Price: ${product?.price}</p>
+                    <p>Quantity: {product?.quantity}</p>
+                </div>
                 <div className="card-actions justify-center">
                     <button
                         onClick={() => manageBtn(_id)}

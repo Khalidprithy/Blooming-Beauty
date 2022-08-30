@@ -1,11 +1,12 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import { GrFacebook } from 'react-icons/gr';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -14,6 +15,9 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+
+
 
     const [
         signInWithEmailAndPassword,
@@ -41,7 +45,17 @@ const Login = () => {
     if (loading || loadingG) {
         <Loading></Loading>
     }
-
+    const handleReset = async (data) => {
+        const email = data.email;
+        console.log(data)
+        if (!email) {
+            toast.error('Enter your email address');
+        }
+        else {
+            await sendPasswordResetEmail(email);
+            toast.success('Sent email');
+        }
+    }
 
     return (
         <div className="hero min-h-screen bg-white">
@@ -63,7 +77,6 @@ const Login = () => {
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control w-full max-w-xs">
                                     <input
-
                                         type="email"
                                         placeholder="Your Email"
                                         className="input input-bordered w-full max-w-xs"
@@ -100,17 +113,25 @@ const Login = () => {
                                         })}
                                     />
                                     <label className="label">
-                                        {errors.password?.type === 'required' && <span className="label-text-alt text-orange-500">{errors.password.message}</span>}
-                                        {errors.password?.type === 'pattern' && <span className="label-text-alt text-orange-500">{errors.password.message}</span>}
+                                        {errors.password?.type === 'required' && <span className="label-text-alt text-error">{errors.password.message}</span>}
+                                        {errors.password?.type === 'pattern' && <span className="label-text-alt text-error">{errors.password.message}</span>}
 
                                     </label>
                                 </div>
 
                                 {errorMessage}
                                 <input className='btn btn-accent w-full text-white' type="submit" value='Login' />
+                                <div className='flex items-center'>
+                                    <p className='text-white p-0 m-0'>Forgot Password?  </p>
+                                    <p>
+                                        <button
+                                            onClick={handleReset}
+                                            className='btn btn-link text-xs text-error p-0 m-0'>Reset</button>
+                                    </p>
+                                </div>
                             </form>
                             <div className='flex justify-center items-center'>
-                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-accent' to='/signup'>Sign Up</Link> </p>
+                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-success' to='/signup'>Sign Up</Link> </p>
                             </div>
                         </div>
                     </div>

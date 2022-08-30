@@ -42,28 +42,16 @@ const MyItems = () => {
     }
 
     return (
-        <div className='my-4 text-center'>
+        <div className='my-4 text-center min-h-screen'>
             <h4 className='text-center font-semibold m-2 text-gray-600'>You have added {myProducts?.length} product</h4>
-            <div>
-                <table className="table m-2">
-                    <thead>
-                        <tr>
-                            <th scope="col">Image</th>
-                            <th className='d-none d-md-block' scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th className='d-none d-md-block' scope="col">Supplier</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    {
-                        myProducts?.map(product => <ShowMyItems
-                            key={product._id}
-                            product={product}
-                            handleDeleteBtn={handleDeleteBtn}
-                        ></ShowMyItems>)
-                    }
-                </table>
+            <div className='flex flex-col gap-4 mx-8'>
+                {
+                    myProducts?.map(product => <ShowMyItems
+                        key={product._id}
+                        product={product}
+                        handleDeleteBtn={handleDeleteBtn}
+                    ></ShowMyItems>)
+                }
             </div>
         </div>
     );

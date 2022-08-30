@@ -156,7 +156,7 @@ const UpdateItems = () => {
                             <button
                                 onClick={handleDelivered}
                                 className='btn btn-xs btn-primary'>Delivered</button>
-                            <button className="btn btn-xs btn-success">Update</button>
+                            {/* <button className="btn btn-xs btn-success">Update</button> */}
                         </div>
                     </div>
                 </div>

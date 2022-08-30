@@ -4,15 +4,13 @@ import { AiOutlineEye } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
-const ShowAllItems = ({ product, handleDeleteBtn }) => {
+
+const ShowPurchase = ({ product, handleDeleteBtn }) => {
 
     const { _id } = product;
     const navigate = useNavigate();
 
     const handleEditBtn = id => {
-        navigate(`/products/${id}`);
-    }
-    const handleViewBtn = id => {
         navigate(`/products/${id}`);
     }
 
@@ -45,28 +43,22 @@ const ShowAllItems = ({ product, handleDeleteBtn }) => {
                     <p>${product?.price}</p>
                 </td>
                 <td>
-                    <p>{product?.brand}</p>
+                    <p className='btn btn-xs btn-success'>Delivered</p>
                 </td>
                 <td>
-                    <p>{product?.quantity}</p>
+                    <p className='btn btn-xs btn-error'>Sold</p>
                 </td>
                 <th>
                     <div className='flex'>
                         <div className="tooltip tooltip-info p-0.5" data-tip="View">
                             <p
-                                onClick={() => handleViewBtn(_id)}
-                                className='btn btn-xs'><AiOutlineEye className='my-1 text-success'></AiOutlineEye></p>
-                        </div>
-                        <div className="tooltip tooltip-info p-0.5" data-tip="View">
-                            <p
                                 onClick={() => handleEditBtn(_id)}
-                                className='btn btn-xs'><FiEdit className='my-1 text-info'></FiEdit></p>
+                                className='btn btn-xs'><AiOutlineEye className='my-1 text-white'></AiOutlineEye></p>
                         </div>
-
                         <div className="tooltip tooltip-error p-0.5" data-tip="Delete">
                             <p
                                 onClick={() => handleDeleteBtn(_id)}
-                                className='btn btn-xs'><MdDelete className='my-1 text-red-500'></MdDelete></p>
+                                className='btn btn-xs'><MdDelete className='my-1 text-white'></MdDelete></p>
                         </div>
                     </div>
                 </th>
@@ -75,4 +67,4 @@ const ShowAllItems = ({ product, handleDeleteBtn }) => {
     );
 };
 
-export default ShowAllItems;
+export default ShowPurchase;

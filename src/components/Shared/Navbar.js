@@ -24,7 +24,7 @@ const Navbar = () => {
     const menuItems = <>
         <li className='font-semibold text-white'><Link to='/'>Dashboard</Link></li>
         <li className='font-semibold text-white'><Link to='/inventory'>Inventory</Link></li>
-        <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
+        <li className='font-semibold text-white'><Link to='/purchases'>Purchases</Link></li>
     </>
 
 
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 </label>
                                 <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
                                     <li>
-                                        <Link to='/profile' className="justify-between text-white">Profile</Link>
+                                        <Link to='/profile' className="justify-between text-white">{user?.displayName}</Link>
                                     </li>
                                     <li>
                                         <Link to='/myItems' className="justify-between text-white">My Items</Link>

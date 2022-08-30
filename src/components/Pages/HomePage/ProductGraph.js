@@ -91,10 +91,10 @@ const data2 = [
 const ProductGraph = () => {
     return (
         <div >
-            <h4 className='text-2xl text-center font-bold text-primary m-4'>Our Business States</h4>
+            <h4 className='text-2xl text-center font-bold text-secondary mt-4'>Our Business States</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 g-4">
                 <div className='border-2 rounded-xl mx-auto mt-10'>
-                    <h6 className='text-center text-secondary font-bold mt-2'>Sells Chart</h6>
+                    <h6 className='text-center text-gray-700 font-bold mt-2'>Sells Chart</h6>
                     <BarChart
                         width={350}
                         height={300}
@@ -117,7 +117,7 @@ const ProductGraph = () => {
                 </div>
 
                 <div className='border-2 rounded-xl mx-auto mt-10'>
-                    <h6 className='text-center text-secondary font-bold m-2'>Business Summery</h6>
+                    <h6 className='text-center text-gray-700 font-bold m-2'>Business Summery</h6>
                     <ComposedChart
                         width={350}
                         height={300}

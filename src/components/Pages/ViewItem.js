@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Blog = () => {
+const ViewItem = () => {
     return (
         <div>
-            <h1>Blog</h1>
+
         </div>
     );
 };
 
-export default Blog;
+export default ViewItem;

@@ -32,7 +32,7 @@ const AddItems = () => {
     };
 
     return (
-        <div className='my-4 text-center'>
+        <div className='my-4 text-center min-h-screen'>
             <h4 className='text-xl font-semibold text-secondary py-6'>Add a new item</h4>
             <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -40,11 +40,11 @@ const AddItems = () => {
                 <div className='flex flex-col md:flex-row items-center justify-around '>
                     <div className='flex flex-col'>
                         <label className='text-left ml-1 mb-2 font-semibold'>User Name</label>
-                        <input className='mb-3 p-1 rounded-md border' value={user?.displayName} {...register("name", { required: true })} />
+                        <input className='mb-3 p-1 rounded-md border' value={user?.displayName} {...register("name", { required: true })} readOnly />
                     </div>
                     <div className='flex flex-col'>
                         <label className='text-left ml-1 mb-2 font-semibold'>Email</label>
-                        <input className='mb-3 p-1 rounded-md border' value={user?.email} {...register("email", { required: true })} />
+                        <input className='mb-3 p-1 rounded-md border' value={user?.email} {...register("email", { required: true })} readOnly />
                     </div>
                 </div>
                 <input className='mb-3 p-1 rounded-md border' placeholder='Product Name' {...register("itemName", { required: true, maxLength: 20 })} />
