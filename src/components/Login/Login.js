@@ -18,7 +18,6 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
 
-
     const [
         signInWithEmailAndPassword,
         user,
@@ -26,11 +25,12 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    console.log(userG);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
-        console.log(data);
     }
     let errorMessage;
 

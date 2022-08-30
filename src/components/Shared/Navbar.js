@@ -53,12 +53,24 @@ const Navbar = () => {
                             <div className="dropdown dropdown-end">
                                 <label tabindex="0" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
-                                        <img src="https://placeimg.com/80/80/people" alt='' />
+                                        {
+                                            user.photoURL ?
+                                                <img src={user?.photoURL} alt='' />
+                                                :
+                                                <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-27.jpg" alt='' />
+                                        }
                                     </div>
                                 </label>
                                 <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
                                     <li>
-                                        <Link to='/profile' className="justify-between text-white">{user?.displayName}</Link>
+                                        <Link to='/profile' className="justify-between text-white">
+                                            {
+                                                user.displayName ?
+                                                    user?.displayName
+                                                    :
+                                                    <p>Profile</p>
+                                            }
+                                        </Link>
                                     </li>
                                     <li>
                                         <Link to='/myItems' className="justify-between text-white">My Items</Link>
