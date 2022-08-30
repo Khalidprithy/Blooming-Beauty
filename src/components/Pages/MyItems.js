@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import DeleteModal from '../Shared/DeleteModal';
 import ShowMyItems from './ShowMyItems';
 
 const MyItems = () => {
     const [user] = useAuthState(auth)
     const [myProducts, setMyProducts] = useState([]);
+    const [deleteItem, setDeleteItem] = useState(null);
     console.log(myProducts)
     useEffect(() => {
         const getMyProducts = async () => {
@@ -43,16 +45,20 @@ const MyItems = () => {
 
     return (
         <div className='my-4 text-center min-h-screen'>
-            <h4 className='text-center font-semibold m-2 text-gray-600'>You have added {myProducts?.length} product</h4>
+            <h4 className='text-left text-2xl font-semibold m-2 p-4 text-gray-600'>You have added {myProducts?.length} product</h4>
             <div className='flex flex-col gap-4 mx-8'>
                 {
                     myProducts?.map(product => <ShowMyItems
                         key={product._id}
                         product={product}
                         handleDeleteBtn={handleDeleteBtn}
+                        setDeleteItem={setDeleteItem}
                     ></ShowMyItems>)
                 }
             </div>
+            {deleteItem && <DeleteModal
+                deleteItem={deleteItem}
+            ></DeleteModal>}
         </div>
     );
 };

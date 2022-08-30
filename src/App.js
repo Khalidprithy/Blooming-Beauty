@@ -7,6 +7,7 @@ import AddItems from './components/Pages/AddItems';
 import Dashboard from './components/Pages/Dashboard';
 import Inventory from './components/Pages/Inventory';
 import MyItems from './components/Pages/MyItems';
+import Profile from './components/Pages/Profile';
 import Purchase from './components/Pages/Purchase';
 import Purchases from './components/Pages/Purchases';
 import UpdateItems from './components/Pages/UpdateItems';
@@ -35,8 +36,18 @@ function App() {
         <Route path='/purchases' element={<Purchases></Purchases>}></Route>
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />
-        <Route path='/addItems' element={<AddItems></AddItems>} />
-        <Route path='/myItems' element={<MyItems></MyItems>} />
+        <Route path='/addItems' element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>} />
+        <Route path='/myItems' element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>} />
+        <Route path='/profile' element={
+          <RequireAuth>
+            <Profile></Profile>
+          </RequireAuth>} />
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
