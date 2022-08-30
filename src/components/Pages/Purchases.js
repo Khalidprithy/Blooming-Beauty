@@ -44,11 +44,6 @@ const Purchases = () => {
 
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <th>Product</th>
                             <th>Category</th>
                             <th>Price</th>
