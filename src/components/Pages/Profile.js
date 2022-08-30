@@ -11,7 +11,7 @@ const Profile = () => {
             <h1 className='text-2xl font-semibold m-6'>Welcome {user.displayName} <br /> Here's your profile</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 '>
                 <div className='card m-8 p-5 border'>
-                    <img className='mask mask-squircle w-32' src={user?.photoURL} alt="" />
+                    <img className='border rounded-2xl w-32' src={user?.photoURL} alt="" />
                     <p>Name: {user?.displayName}</p>
                     <p>Email: {user?.email}</p>
                     <p>Phone: </p>
