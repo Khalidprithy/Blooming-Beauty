@@ -57,7 +57,7 @@ const ShowAllItems = ({ product, handleDeleteBtn }) => {
                                 onClick={() => handleViewBtn(_id)}
                                 className='btn btn-xs'><AiOutlineEye className='my-1 text-success'></AiOutlineEye></p>
                         </div>
-                        <div className="tooltip tooltip-info p-0.5" data-tip="View">
+                        <div className="tooltip tooltip-info p-0.5" data-tip="Edit">
                             <p
                                 onClick={() => handleEditBtn(_id)}
                                 className='btn btn-xs'><FiEdit className='my-1 text-info'></FiEdit></p>

@@ -39,7 +39,7 @@ const TopProduct = () => {
                 </div>
                 <div className='grid grid-cols-1 gap-2 border-2 rounded-2xl p-2'>
                     {
-                        products.slice(3, 5).map(product => <TopSold
+                        products.slice(3, 6).map(product => <TopSold
                             key={product?._id}
                             product={product}
                         ></TopSold>)

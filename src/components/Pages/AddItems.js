@@ -11,7 +11,7 @@ const AddItems = () => {
     const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = product => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://mighty-brushlands-85501.herokuapp.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -47,15 +47,15 @@ const AddItems = () => {
                         <input className='mb-3 p-1 rounded-md border' value={user?.email} {...register("email", { required: true })} readOnly />
                     </div>
                 </div>
-                <input className='mb-3 p-1 rounded-md border' placeholder='Product Name' {...register("itemName", { required: true, maxLength: 20 })} />
-                <input className='mb-3 p-1 rounded-md border' placeholder='Category' {...register("category")} />
-                <input className='mb-3 p-1 rounded-md border' placeholder='Brand' {...register("brand")} />
+                <input className='mb-3 p-1 rounded-md border' placeholder='Product Name' {...register("itemName", { required: true, maxLength: 20 })} required />
+                <input className='mb-3 p-1 rounded-md border' placeholder='Category' {...register("category")} required />
+                <input className='mb-3 p-1 rounded-md border' placeholder='Brand' {...register("brand")} required />
                 <div className='flex flex-col md:flex-row md:items-center justify-between gap-2'>
-                    <input className='mb-3 p-1 rounded-md border' placeholder='Price' type="number" {...register("price")} />
-                    <input className='mb-3 p-1 rounded-md border' placeholder='Quantity' type="number" {...register("quantity", { min: 1, max: 1000 })} />
+                    <input className='mb-3 p-1 rounded-md border' placeholder='Price' type="number" {...register("price")} required />
+                    <input className='mb-3 p-1 rounded-md border' placeholder='Quantity' type="number" {...register("quantity", { min: 1, max: 1000 })} required />
                     <input className='mb-3 p-1 rounded-md border' placeholder='Date' type="date" {...register("date")} />
                 </div>
-                <input className='mb-3 p-1 rounded-md border' placeholder='Photo URL' type="text" {...register("picture")} />
+                <input className='mb-3 p-1 rounded-md border' placeholder='Photo URL' type="text" {...register("picture")} required />
                 <textarea className='mb-3 p-1 rounded-md border' placeholder='Description' {...register("description")} />
                 <div className='flex justify-center items-center gap-2'>
                     <button onClick={() => { reset(); toast.success('Form Reset Successfully') }

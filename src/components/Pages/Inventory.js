@@ -17,7 +17,7 @@ const Inventory = () => {
     const handleDeleteBtn = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
