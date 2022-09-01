@@ -22,9 +22,9 @@ const Navbar = () => {
     }
 
     const menuItems = <>
-        <li className='font-semibold text-white'><Link to='/'>Dashboard</Link></li>
-        <li className='font-semibold text-white'><Link to='/inventory'>Inventory</Link></li>
-        <li className='font-semibold text-white'><Link to='/purchases'>Purchases</Link></li>
+        <li className='font-semibold text-white text-xl'><Link to='/'>Dashboard</Link></li>
+        <li className='font-semibold text-white text-xl'><Link to='/inventory'>Inventory</Link></li>
+        <li className='font-semibold text-white text-xl'><Link to='/purchases'>Purchases</Link></li>
     </>
 
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl text-secondary"><img className='w-36' src={Logo3} alt="" /></Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl text-secondary"><img className='w-44' src={Logo3} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden md:flex lg:flex-auto">
                     <ul className="menu menu-horizontal p-0 md:pr-8">
@@ -66,17 +66,17 @@ const Navbar = () => {
                                         <Link to='/profile' className="justify-between text-white">
                                             {
                                                 user.displayName ?
-                                                    user?.displayName
+                                                    <p className='text-xl'>{user?.displayName}</p>
                                                     :
                                                     <p>Profile</p>
                                             }
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to='/myItems' className="justify-between text-white">My Items</Link>
+                                        <Link to='/myItems' className="justify-between text-white text-xl">My Items</Link>
                                     </li>
                                     <li>
-                                        <Link to='/addItems' className="justify-between text-white">Add Items</Link>
+                                        <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
                                     </li>
                                     <li>
                                         <button

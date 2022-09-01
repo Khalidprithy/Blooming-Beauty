@@ -35,10 +35,10 @@ const ShowPurchase = ({ product, handleDeleteBtn }) => {
                     <p>{product?.category}</p>
                 </td>
                 <td>
-                    <p>${product?.price}</p>
+                    <p className='btn btn-xs btn-success'>Completed</p>
                 </td>
                 <td>
-                    <p className='btn btn-xs btn-success'>Delivered</p>
+                    <p className='btn btn-xs btn-info'>Processing</p>
                 </td>
                 <td>
                     <p className='btn btn-xs btn-error'>Sold</p>
@@ -48,12 +48,12 @@ const ShowPurchase = ({ product, handleDeleteBtn }) => {
                         <div className="tooltip tooltip-info p-0.5" data-tip="View">
                             <p
                                 onClick={() => handleEditBtn(_id)}
-                                className='btn btn-xs'><AiOutlineEye className='my-1 text-white'></AiOutlineEye></p>
+                                className='btn btn-link px-0'><AiOutlineEye className='text-xl text-info'></AiOutlineEye></p>
                         </div>
                         <div className="tooltip tooltip-error p-0.5" data-tip="Delete">
                             <p
                                 onClick={() => handleDeleteBtn(_id)}
-                                className='btn btn-xs'><MdDelete className='my-1 text-white'></MdDelete></p>
+                                className='btn btn-link px-0'><MdDelete className='text-xl text-error'></MdDelete></p>
                         </div>
                     </div>
                 </th>

@@ -16,7 +16,7 @@ const Carousel = () => {
                     <div className='absolute left-12 md:left-24 top-1/4'>
                         <div className='text-left'>
                             <p className='font-light text-sm md:text-base'>Exclusive</p>
-                            <h1 className='text-xl md:text-5xl my-1'>Princes Story</h1>
+                            <h1 className='text-xl md:text-5xl my-1'>Diana's Story</h1>
                             <p className='text-sm md:w-80 text-gray-500 mb-2 hidden md:block'>One of the most successful ways to make money from a beauty blog is through affiliate marketing. You can join relevant affiliate programs and then promote their products on your website</p>
                             <button className='btn btn-xs md:btn-md btn-outline'>Read More</button>
                         </div>

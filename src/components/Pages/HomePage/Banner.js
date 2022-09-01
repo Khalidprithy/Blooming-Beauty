@@ -6,11 +6,11 @@ const Banner = () => {
     return (
         <div className='p-2 py-14 bg-bgpink'>
             <div>
-
+                <h1 className='text-2xl font-semibold text-secondary text-center mb-4'>Business Summary</h1>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-2 m-2'>
                 <div className='p-2 sm:my-6'>
-                    <h1 className='text-xl lg:text-3xl font-bold pb-2'>Welcome Jennifer</h1>
+                    <h1 className='text-2xl lg:text-3xl font-bold pb-2'>Welcome Jennifer</h1>
                     <p className='text-sm'>Here is your Dashboard to keep you updated with your business performance and process.</p>
                     <button className='btn btn-xs btn-accent my-2 rounded-md'>Explore More</button>
                 </div>

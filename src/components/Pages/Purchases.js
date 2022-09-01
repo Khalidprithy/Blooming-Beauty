@@ -45,8 +45,8 @@ const Purchases = () => {
                     <thead>
                         <tr>
                             <th>Product</th>
-                            <th>Category</th>
                             <th>Price</th>
+                            <th>Payment</th>
                             <th>Delivery</th>
                             <th>Status</th>
                             <th>Action</th>

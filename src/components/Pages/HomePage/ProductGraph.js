@@ -92,7 +92,7 @@ const ProductGraph = () => {
     return (
         <div >
             <h4 className='text-2xl text-center font-bold text-secondary mt-4'>Our Business States</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 g-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 g-2">
                 <div className='border-2 rounded-xl mx-auto mt-10'>
                     <h6 className='text-center text-gray-700 font-bold mt-2'>Sells Chart</h6>
                     <BarChart
@@ -101,8 +101,8 @@ const ProductGraph = () => {
                         data={data}
                         margin={{
                             top: 5,
-                            right: 20,
-                            left: 5,
+                            right: 10,
+                            left: 0,
                             bottom: 5,
                         }}
                     >
@@ -124,7 +124,7 @@ const ProductGraph = () => {
                         data={data2}
                         margin={{
                             top: 5,
-                            right: 20,
+                            right: 5,
                             bottom: 10,
                             left: 5,
                         }}
