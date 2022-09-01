@@ -11,14 +11,14 @@ const ShowTopItems = ({ product }) => {
 
 
     return (
-        <div className="card card-compact bg-base-100 hover:shadow-xl shadow-none">
+        <div className="card card-compact h-full bg-base-100 hover:shadow-xl shadow-none">
             <figure><img src={product?.picture} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="text-xl">{product?.itemName}</h2>
                 <p className='text-xs'>{product?.description}</p>
                 <div className='flex flex-row text-xs'>
-                    <p>Price: ${product?.price}</p>
-                    <p>Quantity: {product?.quantity}</p>
+                    <p><span className='font-bold'>Price:</span>  ${product?.price}</p>
+                    <p><span className='font-bold'>Quantity: </span>{product?.quantity}</p>
                 </div>
                 <div className="card-actions justify-center">
                     <button
