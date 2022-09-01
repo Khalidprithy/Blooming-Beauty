@@ -1,7 +1,14 @@
 import React from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const TopSold = ({ product }) => {
+    const { _id } = product;
+    const navigate = useNavigate();
+
+    const manageBtn = id => {
+        navigate(`products/${id}`)
+    }
     return (
         <div className="card h-36 card-side bg-base-100 border rounded-md hover:shadow-2xl">
             <figure><img className='w-32 rounded-xl m-1 md:m-2' src={product?.picture} alt="Shoes" /></figure>
@@ -13,7 +20,9 @@ const TopSold = ({ product }) => {
                     <p className='text-sm'>Quantity: {product?.quantity}</p>
                 </div>
             </div>
-            <button className='btn btn-sm btn-accent rounded-md h-full'><AiOutlineRight></AiOutlineRight></button>
+            <button
+                onClick={() => manageBtn(_id)}
+                className='btn btn-sm btn-accent rounded-md h-full'><AiOutlineRight></AiOutlineRight></button>
         </div>
     );
 };

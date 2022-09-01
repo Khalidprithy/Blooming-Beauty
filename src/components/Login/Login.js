@@ -1,12 +1,11 @@
 import React from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import { GrFacebook } from 'react-icons/gr';
-import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -15,7 +14,8 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+    const [signInWithFacebook, userF, loadingF, errorF] = useSignInWithFacebook(auth);
+    ;
 
 
     const [
@@ -25,41 +25,29 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    console.log(userG);
-
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     }
+
     let errorMessage;
 
-    if (error || errorG) {
-        errorMessage = <p className='text-orange-500'>{error?.message || errorG?.message}</p>
+    if (error || errorG || errorF) {
+        errorMessage = <p className='text-error pb-2'>{error?.message || errorG?.message || errorF.message}</p>
     }
 
-    if (user || userG) {
+    if (user || userG || userF) {
         navigate(from, { replace: true });
     }
 
-    if (loading || loadingG) {
+    if (loading || loadingG || loadingF) {
         <Loading></Loading>
-    }
-    const handleReset = async (data) => {
-        const email = data.email;
-        console.log(data)
-        if (!email) {
-            toast.error('Enter your email address');
-        }
-        else {
-            await sendPasswordResetEmail(email);
-            toast.success('Sent email');
-        }
     }
 
     return (
         <div className="hero min-h-screen bg-white">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col md:flex-row-reverse">
                 <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
                     <div className="card w-80 bg-secondary border rounded-md">
@@ -70,7 +58,7 @@ const Login = () => {
                                     onClick={() => signInWithGoogle()}
                                     className="btn border-white hover:border-white text-black hover:text-red-400 bg-white hover:bg-accent"><FcGoogle className='mr-2'></FcGoogle>Google</button>
                                 <button
-                                    onClick={() => signInWithGoogle()}
+                                    onClick={() => signInWithFacebook()}
                                     className="btn border-white hover:border-white text-black hover:text-blue-600 bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button>
                             </div>
                             <div className="divider text-white">OR</div>
@@ -78,6 +66,7 @@ const Login = () => {
                                 <div className="form-control w-full max-w-xs">
                                     <input
                                         type="email"
+                                        name="email"
                                         placeholder="Your Email"
                                         className="input input-bordered w-full max-w-xs"
                                         {...register("email", {
@@ -92,8 +81,8 @@ const Login = () => {
                                         })}
                                     />
                                     <label className="label">
-                                        {errors.email?.type === 'required' && <span className="label-text-alt text-orange-500">{errors.email.message}</span>}
-                                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-orange-500">{errors.email.message}</span>}
+                                        {errors.email?.type === 'required' && <span className="label-text-alt text-error">{errors.email.message}</span>}
+                                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-error">{errors.email.message}</span>}
                                     </label>
                                 </div>
                                 <div className="form-control w-full max-w-xs">
@@ -120,18 +109,18 @@ const Login = () => {
                                 </div>
 
                                 {errorMessage}
-                                <input className='btn btn-accent w-full text-white' type="submit" value='Login' />
-                                <div className='flex items-center'>
-                                    <p className='text-white p-0 m-0'>Forgot Password?  </p>
-                                    <p>
-                                        <button
-                                            onClick={handleReset}
-                                            className='btn btn-link text-xs text-error p-0 m-0'>Reset</button>
+
+                                <div className='flex items-center justify-between'>
+                                    <p className='text-start'>
+                                        <Link
+                                            to='/resetpassword'
+                                            className='btn btn-link text-xs text-white p-0 m-0'>Forgot password?</Link>
                                     </p>
                                 </div>
+                                <input className='btn btn-accent w-full text-white' type="submit" value='Login' />
                             </form>
                             <div className='flex justify-center items-center'>
-                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-success' to='/signup'>Sign Up</Link> </p>
+                                <p className='text-white text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-accent' to='/signup'>Sign Up</Link> </p>
                             </div>
                         </div>
                     </div>

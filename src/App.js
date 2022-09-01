@@ -2,6 +2,7 @@ import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
+import ResetPassword from './components/Login/ResetPassword';
 import SignUp from './components/Login/SignUp';
 import AddItems from './components/Pages/AddItems';
 import Dashboard from './components/Pages/Dashboard';
@@ -36,6 +37,7 @@ function App() {
         <Route path='/purchases' element={<Purchases></Purchases>}></Route>
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />
+        <Route path='/resetpassword' element={<ResetPassword></ResetPassword>} />
         <Route path='/addItems' element={
           <RequireAuth>
             <AddItems></AddItems>

@@ -11,7 +11,7 @@ const AddItems = () => {
     const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = product => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://mighty-brushlands-85501.herokuapp.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -20,7 +20,7 @@ const AddItems = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 toast.success('Your product added')
                 reset()
             })

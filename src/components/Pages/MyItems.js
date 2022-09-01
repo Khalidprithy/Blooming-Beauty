@@ -8,11 +8,11 @@ const MyItems = () => {
     const [user] = useAuthState(auth)
     const [myProducts, setMyProducts] = useState([]);
     const [deleteItem, setDeleteItem] = useState(null);
-    console.log(myProducts)
+    // console.log(myProducts)
     useEffect(() => {
         const getMyProducts = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/product?email=${email}`;
+            const url = `https://mighty-brushlands-85501.herokuapp.com/product?email=${email}`;
             fetch(url, {
                 method: 'GET',
                 headers: {
@@ -30,13 +30,13 @@ const MyItems = () => {
     const handleDeleteBtn = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     const remaining = myProducts.filter(product => product._id !== id);
                     setMyProducts(remaining);
                 })

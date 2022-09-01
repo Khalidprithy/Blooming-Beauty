@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://mighty-brushlands-85501.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 
@@ -14,5 +14,5 @@ const useProducts = () => {
 }
 export default useProducts
 
-// --http://localhost:5000/
-// --http://localhost:5000/
+// --https://mighty-brushlands-85501.herokuapp.com/
+// --https://mighty-brushlands-85501.herokuapp.com/

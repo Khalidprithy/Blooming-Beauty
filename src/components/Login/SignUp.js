@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -13,6 +13,8 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const [agree, setAgree] = useState(false);
+
 
     const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -46,7 +48,7 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-100">
-            <div className="hero-content flex-col lg:flex-row">
+            <div className="hero-content flex-col md:flex-row">
                 <img src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2745.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" />
                 <div>
                     <div className="card w-80 bg-secondary border rounded-md">
@@ -123,7 +125,17 @@ const SignUp = () => {
                                     </label>
                                 </div>
                                 {errorMessage}
-                                <input className='btn btn-accent w-full text-white' type="submit" value='Sign Up' />
+
+
+                                <div>
+                                    <input
+                                        onClick={() => setAgree(!agree)}
+                                        type="checkbox" name="terms" id="" />
+                                    <label className='ml-1 pb-2 text-white' htmlFor="terms">I agree with the terms of use </label>
+                                </div>
+                                <input
+                                    disabled={!agree}
+                                    className='btn btn-accent w-full text-white mt-1' type="submit" value='Sign Up' />
                             </form>
                             <div className='flex items-center'>
                                 <p className='text-white'>Already have an account?<Link className='btn btn-link text-xs text-accent' to='/login'>Login</Link> </p>
