@@ -5,12 +5,12 @@ const Loading = () => {
 
     const { containerProps, indicatorEl } = useLoading({
         loading: true,
-        indicator: <Audio width="50" />
+        indicator: <Audio width="100" />
     });
     return (
-        <div>
-            <section {...containerProps}>
-                {indicatorEl} {/* renders only while loading */}
+        <div className='min-h-screen flex justify-center items-center'>
+            <section  {...containerProps}>
+                {indicatorEl}
             </section>
         </div>
     );

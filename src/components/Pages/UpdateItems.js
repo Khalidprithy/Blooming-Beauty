@@ -126,7 +126,7 @@ const UpdateItems = () => {
             <h1 className='text-center text-2xl text-gray-500 mt-6 font-bold'>Update this item</h1>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col md:flex-row">
-                    <img src={product?.picture} className="max-w-sm w-72  rounded-lg border hover:scale-105 duration-75 delay-75 ease-in translate-y-1" alt='' />
+                    <img src={product?.picture} className="max-w-sm w-72 md:w-96 rounded-lg border hover:scale-105 duration-75 delay-75 ease-in translate-y-1" alt='' />
                     <div>
                         <h1 className="text-5xl font-bold">{product?.itemName}</h1>
                         <p className="py-6">{product?.description}</p>
@@ -140,22 +140,22 @@ const UpdateItems = () => {
                             onSubmit={handleRestock}
                         >
                             <div className='flex items-center gap-2 my-2'>
-                                <input className='w-1/2 border rounded-xl' type="text" name='newQuantity' />
-                                <input className='btn btn-xs btn-accent' type="submit" value="Restock" />
+                                <input className='w-1/2 mb-1 p-1 px-2 border-2 hover:border-secondary rounded-xl' type="text" name='newQuantity' />
+                                <input className='btn btn-sm btn-accent' type="submit" value="Restock" />
                             </div>
                         </form>
                         <form
                             onSubmit={updatePrice}
                         >
                             <div className='flex items-center gap-2 my-2'>
-                                <input className='w-1/2 border rounded-xl' type="text" name='newPrice' />
-                                <input className='btn btn-xs btn-accent' type="submit" value="Update Price" />
+                                <input className='w-1/2 mb-1 p-1 px-2 border-2 hover:border-secondary rounded-xl' type="text" name='newPrice' />
+                                <input className='btn btn-sm btn-accent' type="submit" value="Update Price" />
                             </div>
                         </form>
                         <div className='flex items-center justify-between gap-2'>
                             <button
                                 onClick={handleDelivered}
-                                className='btn btn-xs btn-primary'>Delivered</button>
+                                className='btn btn-sm btn-primary'>Delivered</button>
                             {/* <button className="btn btn-xs btn-success">Update</button> */}
                         </div>
                     </div>
