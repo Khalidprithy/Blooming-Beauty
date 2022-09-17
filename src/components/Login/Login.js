@@ -17,7 +17,6 @@ const Login = () => {
     const [signInWithFacebook, userF, loadingF, errorF] = useSignInWithFacebook(auth);
     ;
 
-
     const [
         signInWithEmailAndPassword,
         user,
