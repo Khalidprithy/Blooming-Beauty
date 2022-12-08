@@ -9,7 +9,7 @@ I have attached both client and server site link bellow.
 
 ## 🔗 Links
 [client](https://blooming-beauty-25ee5.web.app/)
-[server](https://mighty-brushlands-85501.herokuapp.com/)
+[server](https://blooming-beauty-server.onrender.com/)
 
 ## Documentation
 This is a react application build to manage the inventory of Blooming Beauty e-commerce site. User will be able to see the sells update, business investment, profits and losses. They will be also able to update, restock, delete and add new products. 

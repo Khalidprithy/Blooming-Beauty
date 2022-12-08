@@ -8,7 +8,7 @@ const UpdateItems = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`;
+        const url = `https://blooming-beauty-server.onrender.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -37,7 +37,7 @@ const UpdateItems = () => {
                 picture: product.picture
             }
             setProduct(updatedProduct)
-            const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`;
+            const url = `https://blooming-beauty-server.onrender.com/products/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -74,7 +74,7 @@ const UpdateItems = () => {
                 picture: product.picture
             }
             setProduct(updatedProduct)
-            const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`;
+            const url = `https://blooming-beauty-server.onrender.com/products/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -105,7 +105,7 @@ const UpdateItems = () => {
             picture: product.picture
         }
         setProduct(updatedProduct);
-        const url = `https://mighty-brushlands-85501.herokuapp.com/products/${id}`;
+        const url = `https://blooming-beauty-server.onrender.com/products/${id}`;
         await fetch(url, {
             method: 'PUT',
             headers: {

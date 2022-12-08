@@ -10,8 +10,9 @@ const AddItems = () => {
 
     const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = product => {
-        fetch('https://mighty-brushlands-85501.herokuapp.com/products', {
+        fetch('https://blooming-beauty-server.onrender.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
