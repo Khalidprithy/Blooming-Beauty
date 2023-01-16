@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 const Profile = () => {
 
     const [user] = useAuthState(auth);
+    console.log(user)
 
     return (
         <div>
@@ -12,9 +13,9 @@ const Profile = () => {
             <div className='m-2 grid grid-cols-1 md:grid-cols-3'>
                 <div className='h-full'>
                     <div className="card h-full">
-                        <figure className="px-10 pt-10">
-                            <img className="mask mask-squircle w-32" src={user?.photoURL} alt=" Shoes" />
-                        </figure>
+
+                        <img className="mask mask-circle w-32 mx-auto" src={user?.photoURL} alt=" Shoes" />
+
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{user?.displayName}</h2>
                             <p>{user?.email}</p>
