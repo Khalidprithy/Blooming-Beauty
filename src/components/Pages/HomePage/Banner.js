@@ -1,50 +1,61 @@
 import React from 'react';
 import { FcMoneyTransfer } from 'react-icons/fc';
-import { BsCashCoin, BsCartFill } from 'react-icons/bs';
+import { BsCashCoin, BsCartFill, BsBank } from 'react-icons/bs';
 
 const Banner = () => {
     return (
-        <div className='p-2 py-14 bg-bgpink'>
-            <div>
-                <h1 className='text-2xl font-semibold text-secondary text-center mb-4'>Business Summary</h1>
+        <div className='flex flex-col md:flex-col lg:flex-row p-2 py-14'>
+            <div className='w-full lg:w-4/12 p-2 lg:px-10 sm:my-6'>
+                <h1 className='text-2xl md:text-4xl lg:text-3xl font-bold pb-2'>Welcome Jennifer</h1>
+                <p className='text-base'>Manage Your Beauty Business with Ease - Your One-Stop Shop for Product Management, Inventory Tracking and Sales Monitoring</p>
+                <button className='btn btn-sm btn-success my-2 rounded text-white'>Explore More</button>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 m-2'>
-                <div className='p-2 sm:my-6'>
-                    <h1 className='text-2xl lg:text-3xl font-bold pb-2'>Welcome Jennifer</h1>
-                    <p className='text-sm'>Here is your Dashboard to keep you updated with your business performance and process.</p>
-                    <button className='btn btn-sm btn-accent my-2 rounded-md'>Explore More</button>
-                </div>
-                <div className='border-2 rounded-lg p-6 transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-105 hover:bg-accent duration-300'>
+            <div className='w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-2'>
+                <div className='relative rounded-2xl p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
                     <div className='flex justify-between'>
-                        <p className='w-10 h-10 bg-gray-300 p-2 rounded-lg'><FcMoneyTransfer className='mx-auto text-2xl'></FcMoneyTransfer></p>
-                        <div className='flex flex-col'>
-                            <p className='text-lg font-semibold'>Investment</p>
+                        <FcMoneyTransfer className='absolute -top-5 right-5 text-5xl'></FcMoneyTransfer>
+                        <div className='flex flex-col justify-end'>
+                            <p className='text-lg font-semibold text-end'>Investment</p>
                             <h4>$340.02</h4>
                         </div>
                     </div>
-                    <progress className="progress progress-primary w-full" value="70" max="100"></progress>
+                    <progress className="progress progress-success w-full" value="70" max="100"></progress>
                     <p className='text-sm text-center'>Sells have increased 10%</p>
                 </div>
-                <div className='border-2 rounded-lg p-6 transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-105 hover:bg-accent duration-300'>
+                <div className='relative rounded-2xl p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
                     <div className='flex justify-between'>
-                        <p className='w-10 h-10 bg-gray-300 p-2 rounded-lg'><BsCashCoin className='mx-auto text-2xl text-error'></BsCashCoin></p>
-                        <div className='flex flex-col'>
+                        <BsCashCoin className='absolute -top-5 right-5 text-5xl text-green-500'></BsCashCoin>
+                        <div className='flex flex-col justify-end'>
                             <p className='text-lg font-semibold'>Total Cost</p>
                             <h4>$2502</h4>
                         </div>
                     </div>
-                    <progress className="progress progress-error w-full" value="90" max="100"></progress>
+                    <progress className="progress progress-success w-full" value="70" max="100"></progress>
                     <p className='text-sm text-center'>Investment has increased 24%</p>
                 </div>
-                <div className='border-2 rounded-lg p-6 transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-105 hover:bg-accent duration-300'>
+
+
+                <div className='relative rounded-2xl p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
                     <div className='flex justify-between'>
-                        <p className='w-10 h-10 bg-gray-300 p-2 rounded-lg'><BsCartFill className='mx-auto text-2xl text-success'></BsCartFill></p>
+                        <BsCartFill className='absolute -top-5 right-5 text-5xl text-gray-700'></BsCartFill>
                         <div className='flex flex-col'>
                             <p className='text-lg font-semibold'>Total Sales</p>
                             <h4>$1540</h4>
                         </div>
                     </div>
-                    <progress className="progress progress-success w-full" value="80" max="100"></progress>
+                    <progress className="progress progress-success w-full" value="85" max="100"></progress>
+                    <p className='text-sm text-center'>Sells have increased 10%</p>
+                </div>
+
+                <div className='relative rounded-2xl p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
+                    <div className='flex justify-between'>
+                        <BsBank className='absolute -top-5 right-5 text-5xl text-teal-600'></BsBank>
+                        <div className='flex flex-col'>
+                            <p className='text-lg font-semibold'>Transfer</p>
+                            <h4>$1540</h4>
+                        </div>
+                    </div>
+                    <progress className="progress progress-success w-full" value="85" max="100"></progress>
                     <p className='text-sm text-center'>Sells have increased 10%</p>
                 </div>
             </div>

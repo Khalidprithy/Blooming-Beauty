@@ -23,7 +23,7 @@ const ShowTopItems = ({ product }) => {
                 <div className="card-actions justify-center">
                     <button
                         onClick={() => manageBtn(_id)}
-                        className="btn btn-sm btn-accent w-full">Manage</button>
+                        className="btn btn-sm btn-success w-full">Manage</button>
                 </div>
             </div>
         </div>

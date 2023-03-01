@@ -5,9 +5,9 @@ import Logo3 from '../../images/Logo3.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-secondary text-base-content grid grid-cols-2 md:grid-cols-4">
+            <footer className="footer p-10 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 text-base-content grid grid-cols-2 md:grid-cols-4">
                 <div>
-                    <img className='w-44' src={Logo3} alt="logo" />
+                    <img className='w-44' src={Logo2} alt="logo" />
                     <p>Cosmetic Product Ltd. <br /> Providing reliable beauty product since 2010</p>
                 </div>
                 <div>

@@ -1,145 +1,195 @@
-import React from 'react';
-import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, Scatter, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import React, { useState } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-
-const data = [
-    {
-        name: 'Hair',
-        month: 'Jan',
-        price: 80,
-        sells: 110,
-    },
-    {
-        name: 'Skin',
-        month: 'Feb',
-        price: 110,
-        sells: 180,
-    },
-    {
-        name: 'Makeup',
-        month: 'Mar',
-        price: 198,
-        sells: 190,
-    },
-    {
-        name: 'Women',
-        month: 'Api',
-        price: 190,
-        sells: 250,
-    },
-    {
-        name: 'Body',
-        month: 'May',
-        price: 300,
-        sells: 330,
-    },
-    {
-        name: 'Gift',
-        month: 'June',
-        price: 380,
-        sells: 380,
-    },
-];
-
-const data2 = [
-    {
-        year: '2010',
-        sells: 190,
-        profit: 200,
-        invest: 400,
-        lose: 120,
-    },
-    {
-        year: '2012',
-        sells: 250,
-        profit: 220,
-        invest: 500,
-        lose: 80,
-    },
-    {
-        year: '2014',
-        sells: 300,
-        profit: 500,
-        invest: 700,
-        lose: 150,
-    },
-    {
-        year: '2018',
-        sells: 250,
-        profit: 300,
-        invest: 1000,
-        lose: 480,
-    },
-    {
-        year: '2020',
-        sells: 520,
-        profit: 1108,
-        invest: 1100,
-        lose: 60,
-    },
-    {
-        year: '2022',
-        sells: 1400,
-        profit: 1680,
-        invest: 1700,
-        lose: 380,
-    },
-];
 
 
 
 const ProductGraph = () => {
-    return (
-        <div >
-            <h4 className='text-2xl text-center font-bold text-secondary mt-4'>Our Business States</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 g-2">
-                <div className='border-2 rounded-xl mx-auto mt-10'>
-                    <h6 className='text-center text-gray-700 font-bold mt-2'>Sells Chart</h6>
-                    <BarChart
-                        width={350}
-                        height={300}
-                        data={data}
-                        margin={{
-                            top: 5,
-                            right: 10,
-                            left: 0,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis dataKey="price" />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="price" fill="#60a5fa" />
-                        <Bar dataKey="sells" fill="#82ca9d" />
-                    </BarChart>
-                </div>
+    const [timelineChart, setTimelineChart] = useState({
+        series: [
+            {
+                name: 'Bobainna',
+                data: [
+                    {
+                        x: 'Order',
+                        y: [
+                            new Date('2019-03-05').getTime(),
+                            new Date('2019-03-08').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Confirm',
+                        y: [
+                            new Date('2019-03-02').getTime(),
+                            new Date('2019-03-05').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Confirm',
+                        y: [
+                            new Date('2019-03-05').getTime(),
+                            new Date('2019-03-07').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Package',
+                        y: [
+                            new Date('2019-03-03').getTime(),
+                            new Date('2019-03-09').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Package',
+                        y: [
+                            new Date('2019-03-08').getTime(),
+                            new Date('2019-03-11').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Shipment',
+                        y: [
+                            new Date('2019-03-11').getTime(),
+                            new Date('2019-03-16').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Order',
+                        y: [
+                            new Date('2019-03-01').getTime(),
+                            new Date('2019-03-03').getTime()
+                        ],
+                    }
+                ]
+            },
+            {
+                name: 'Smith',
+                data: [
+                    {
+                        x: 'Order',
+                        y: [
+                            new Date('2019-03-02').getTime(),
+                            new Date('2019-03-05').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Package',
+                        y: [
+                            new Date('2019-03-06').getTime(),
+                            new Date('2019-03-16').getTime()
+                        ],
+                        goals: [
+                            {
+                                name: 'Break',
+                                value: new Date('2019-03-10').getTime(),
+                                strokeColor: '#CD2F2A'
+                            }
+                        ]
+                    },
+                    {
+                        x: 'Confirm',
+                        y: [
+                            new Date('2019-03-03').getTime(),
+                            new Date('2019-03-07').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Completed',
+                        y: [
+                            new Date('2019-03-20').getTime(),
+                            new Date('2019-03-22').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Order',
+                        y: [
+                            new Date('2019-03-10').getTime(),
+                            new Date('2019-03-16').getTime()
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Kevin',
+                data: [
+                    {
+                        x: 'Confirm',
+                        y: [
+                            new Date('2019-03-10').getTime(),
+                            new Date('2019-03-17').getTime()
+                        ]
+                    },
+                    {
+                        x: 'Shipment',
+                        y: [
+                            new Date('2019-03-05').getTime(),
+                            new Date('2019-03-09').getTime()
+                        ],
+                        goals: [
+                            {
+                                name: 'Break',
+                                value: new Date('2019-03-07').getTime(),
+                                strokeColor: '#CD2F2A'
+                            }
+                        ]
+                    },
+                ]
+            }
+        ],
+        options: {
+            chart: {
+                height: 450,
+                type: 'rangeBar'
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                    barHeight: '80%'
+                }
+            },
+            xaxis: {
+                type: 'datetime'
+            },
+            stroke: {
+                width: 1
+            },
+            fill: {
+                type: 'solid',
+                opacity: 0.6
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'left'
+            }
+        },
 
-                <div className='border-2 rounded-xl mx-auto mt-10'>
-                    <h6 className='text-center text-gray-700 font-bold m-2'>Business Summery</h6>
-                    <ComposedChart
-                        width={350}
-                        height={300}
-                        data={data2}
-                        margin={{
-                            top: 5,
-                            right: 5,
-                            bottom: 10,
-                            left: 5,
-                        }}
-                    >
-                        <CartesianGrid stroke="#f5f5f5" />
-                        <XAxis dataKey="year" scale="band" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Area type="monotone" dataKey="invest" fill="#60a5fa" stroke="#8884d8" />
-                        <Bar dataKey="profit" barSize={20} fill="#413ea0" />
-                        <Line type="monotone" dataKey="sells" stroke="#ff7300" />
-                        <Scatter dataKey="lose" fill="red" />
-                    </ComposedChart>
+    })
+
+    return (
+        <div className='flex flex-col lg:flex-row gap-6 mt-6 p-4'>
+            <div className='w-full lg:w-2/12 flex flex-col lg:flex-col gap-6'>
+                <div className='h-full rounded-lg p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
+                    <h1 className='text-xl font-semibold'>New Clients</h1>
+                    <div className='flex lg:flex-col items-center gap-4'>
+                        <h1 className='text-6xl font-bold font-mono'>62</h1>
+                        <p className='bg-green-100 rounded-md text-green-700 w-fit p-1'> +13% in one month</p>
+                    </div>
                 </div>
+                <div className='h-full rounded-lg p-6 transition ease-in-out delay-250 shadow hover:shadow-lg duration-300'>
+                    <h1 className='text-xl font-semibold'>Product Shipped</h1>
+                    <div className='flex lg:flex-col items-center gap-4'>
+                        <h1 className='text-6xl font-bold font-mono'>24</h1>
+                        <p className='bg-red-100 rounded-md text-green-700 w-fit p-1'> +17% then last week</p>
+                    </div>
+                </div>
+            </div>
+            <div className='w-full lg:w-10/12 bg-white pr-4 rounded-lg p-2 shadow'>
+                <h4 className='text-xl font-semibold m-2'>Product Timeline</h4>
+                <ReactApexChart
+                    options={timelineChart.options}
+                    series={timelineChart.series}
+                    type="rangeBar"
+                    width='100%'
+                    height={350} />
             </div>
         </div>
     );

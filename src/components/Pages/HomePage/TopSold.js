@@ -10,19 +10,19 @@ const TopSold = ({ product }) => {
         navigate(`products/${id}`)
     }
     return (
-        <div className="card h-36 card-side bg-base-100 border rounded-md hover:shadow-2xl">
-            <figure><img className='w-32 rounded-xl m-1 md:m-2' src={product?.picture} alt="Shoes" /></figure>
+        <div className="card h-full card-side border transition ease-in-out delay-250 shadow hover:shadow-lg duration-300">
+            <figure><img className='w-32 h-32 rounded-xl m-1 md:m-2' src={product?.picture} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="text-base font-semibold text-left">{product.itemName}</h2>
                 <div>
-                    <p className='text-sm'>Price: ${product?.price}</p>
-                    <p className='text-sm'>Brand: {product?.brand}</p>
-                    <p className='text-sm'>Quantity: {product?.quantity}</p>
+                    <p >Price: ${product?.price}</p>
+                    <p >Brand: {product?.brand}</p>
+                    <p >Quantity: {product?.quantity}</p>
                 </div>
             </div>
             <button
                 onClick={() => manageBtn(_id)}
-                className='btn btn-sm btn-accent rounded-md h-full'><AiOutlineRight></AiOutlineRight></button>
+                className='btn btn-sm btn-success rounded-md h-full'><AiOutlineRight></AiOutlineRight></button>
         </div>
     );
 };

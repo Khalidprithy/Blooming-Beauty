@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
 import ResetPassword from './components/Login/ResetPassword';
@@ -13,14 +13,22 @@ import Purchase from './components/Pages/Purchase';
 import Purchases from './components/Pages/Purchases';
 import UpdateItems from './components/Pages/UpdateItems';
 import Footer from './components/Shared/Footer';
+import Header from './components/Shared/Header';
 import Navbar from './components/Shared/Navbar';
 import NotFound from './components/Shared/NotFound';
 import RequireAuth from './components/Shared/RequireAuth';
 
 function App() {
+
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  const isSignUpPage = location.pathname === '/signup';
+  const isResetPassword = location.pathname === '/resetpassword';
+
+
   return (
     <div>
-      <Navbar></Navbar>
+      {!isLoginPage && !isSignUpPage && !isResetPassword ? <Header /> : null}
       <Routes>
         <Route path='/' element={<Dashboard></Dashboard>}></Route>
         <Route path='/inventory' element={
@@ -53,7 +61,7 @@ function App() {
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      {!isLoginPage && !isSignUpPage && !isResetPassword ? <Footer /> : null}
       <Toaster />
     </div>
   );

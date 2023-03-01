@@ -23,16 +23,16 @@ const Navbar = () => {
     }
 
     const menuItems = <>
+        <li className='font-semibold text-neutral text-xl'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-neutral text-xl'><Link to='/'>Dashboard</Link></li>
         <li className='font-semibold text-neutral text-xl'><Link to='/inventory'>Inventory</Link></li>
         <li className='font-semibold text-neutral text-xl'><Link to='/purchases'>Purchases</Link></li>
     </>
 
-
     return (
         <div>
-            <div className="navbar h-16 relative bg-primary">
-                <div className="navbar-start flex-1">
+            <div className="navbar h-20 relative bg-primary">
+                <div className="navbar-start md:flex-none xl:flex-1">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost md:hidden lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -41,8 +41,8 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to='/' className="absolute left-20 -bottom-14 w-20 md:w-28 h-28 rounded-full border border-t-4 border-b-0 border-r-0 border-l-0 border-red-500"><img className='absolute left-0 bottom-5 md:bottom-0 w-20 md:w-32 hover:scale-110 hover:rotate-[720deg] duration-150 ease-in-out z-30' src={Logo4} alt="" />
-                        <h4 className='ml-32 text-3xl font-mono font-extralight cursor-pointer'>LuxeLooks</h4>
+                    <Link to='/' className="absolute left-20 -bottom-14 w-20 md:w-28 h-28 rounded-full border border-t-4 border-b-0 border-r-0 border-l-0 border-red-500"><img className='absolute left-0 bottom-5 md:bottom-0 w-20 md:w-32 hover:scale-x-110 hover:rotate-[720deg] duration-150 ease-in-out z-30' src={Logo4} alt="" />
+                        <h4 className='ml-32 text-3xl font-mono font-extralight cursor-pointer hidden lg:block'>LuxeLooks</h4>
                     </Link>
 
                 </div>
