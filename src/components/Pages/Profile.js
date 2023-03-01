@@ -26,12 +26,12 @@ const Profile = () => {
                     <h1 className='text-xl m-2 font-semibold text-center'>Update your profile</h1>
                     <div className="card-body">
                         <div className="form-control">
-                            <input className='mb-3 p-2 rounded-md border-2 hover:border-accent' type="text" placeholder="Your name" />
-                            <input type="text" placeholder="Your email" className='mb-3 p-2 rounded-md border-2 hover:border-accent' />
-                            <input type="text" placeholder="Phone number" className='mb-3 p-2 rounded-md border-2 hover:border-accent' />
-                            <input type="text" placeholder="Company" className='mb-3 p-2 rounded-md border-2 hover:border-accent' />
-                            <textarea className='mb-3 p-2 rounded-md border-2 hover:border-accent h-20' placeholder='Bio' name="bio" id="bio" cols="30" rows="10"></textarea>
-                            <button className='btn btn-accent'>Update</button>
+                            <input className='mb-3 p-2 rounded-md border-2 hover:border-success' type="text" placeholder="Your name" />
+                            <input type="text" placeholder="Your email" className='mb-3 p-2 rounded-md border-2 hover:border-success' />
+                            <input type="text" placeholder="Phone number" className='mb-3 p-2 rounded-md border-2 hover:border-success' />
+                            <input type="text" placeholder="Company" className='mb-3 p-2 rounded-md border-2 hover:border-success' />
+                            <textarea className='mb-3 p-2 rounded-md border-2 hover:border-success h-20' placeholder='Bio' name="bio" id="bio" cols="30" rows="10"></textarea>
+                            <button className='btn btn-success'>Update</button>
                         </div>
                     </div>
                 </div>

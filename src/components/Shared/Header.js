@@ -18,7 +18,6 @@ const Header = () => {
     }
 
     const menuItems = <>
-        <li><Link className='font-semibold text-green-600 text-xl' to='/'>Home</Link></li>
         <li><Link className='font-semibold text-green-600 text-xl' to='/'>Dashboard</Link></li>
         <li><Link className='font-semibold text-green-600 text-xl' to='/inventory'>Inventory</Link></li>
         <li><Link className='font-semibold text-green-600 text-xl' to='/purchases'>Purchases</Link></li>
@@ -37,7 +36,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link to='/' >
-                    <h4 className='text-3xl text-green-600 font-mono font-semibold cursor-pointer'>Blooming Beauty</h4>
+                    <h4 className='text-3xl text-green-600 font-mono font-semibold cursor-pointer ml-2 md:ml-6'>Blooming Beauty</h4>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -81,7 +80,7 @@ const Header = () => {
                                 <li className='m-2'>
                                     <button
                                         onClick={handleSignOut}
-                                        className='flex justify-center items-center btn-success text-green-600 font-semibold w-full'>Sign out </button>
+                                        className='flex justify-center items-center btn-success text-white font-semibold w-full shadow-lg'>Logout </button>
                                 </li>
                             </ul>
                         </div>

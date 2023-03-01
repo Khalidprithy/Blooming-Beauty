@@ -20,7 +20,7 @@ const ShowMyItems = ({ product, handleDeleteBtn, setDeleteItem }) => {
                         for="deleteModal" className='btn btn-link'><AiFillDelete className='text-error text-4xl'></AiFillDelete></label> */}
                     <button
                         onClick={() => handleDeleteBtn(_id)}
-                        className='btn btn-accent w-full mt-2 md:btn-link'><AiFillDelete className='text-error text-4xl'></AiFillDelete>
+                        className='btn btn-success w-full mt-2 md:btn-link'><AiFillDelete className='text-error text-4xl'></AiFillDelete>
                     </button>
                 </div>
             </div>

@@ -141,7 +141,7 @@ const UpdateItems = () => {
                         >
                             <div className='flex items-center gap-2 my-2'>
                                 <input className='w-1/2 mb-1 p-1 px-2 border-2 hover:border-secondary rounded-xl' type="text" name='newQuantity' />
-                                <input className='btn btn-sm btn-accent' type="submit" value="Restock" />
+                                <input className='btn btn-sm btn-success' type="submit" value="Restock" />
                             </div>
                         </form>
                         <form
@@ -149,7 +149,7 @@ const UpdateItems = () => {
                         >
                             <div className='flex items-center gap-2 my-2'>
                                 <input className='w-1/2 mb-1 p-1 px-2 border-2 hover:border-secondary rounded-xl' type="text" name='newPrice' />
-                                <input className='btn btn-sm btn-accent' type="submit" value="Update Price" />
+                                <input className='btn btn-sm btn-success' type="submit" value="Update Price" />
                             </div>
                         </form>
                         <div className='flex items-center justify-between gap-2'>

@@ -85,12 +85,12 @@ const Navbar = () => {
                                     <li className='m-2'>
                                         <button
                                             onClick={handleSignOut}
-                                            className='flex justify-center items-center btn-accent text-neutral font-semibold w-full'>Sign out </button>
+                                            className='flex justify-center items-center btn-success text-neutral font-semibold w-full'>Sign out </button>
                                     </li>
                                 </ul>
                             </div>
                             :
-                            <NavLink className='btn btn-accent btn-sm' to="/login">Login</NavLink>
+                            <NavLink className='btn btn-success btn-sm' to="/login">Login</NavLink>
                     }
                 </div>
             </div>
